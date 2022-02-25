@@ -1,5 +1,10 @@
 <script>
-  import ProgressBar from './components/ProgressBar.svelte';
+  import Handwash from './components/Handwash.svelte';
+  import Handrub from './components/Handrub.svelte';
+  ('use strict');
+
+  let howTo = 0;
+  /*   import ProgressBar from './components/ProgressBar.svelte';
   let better = 60,
     minimum = 40,
     timer = 0,
@@ -25,12 +30,26 @@
     progress = 100 - ((better - timer) / better) * 100;
     console.log('timer :>> ', timer);
     console.log('progress :>> ', progress);
-  }
+  } */
 </script>
 
-<h2>Handwashing</h2>
-<p>Duration of the entire procedure: 40-60 seconds</p>
-<ProgressBar {progress} {color} {timer} />
+<h2>Hand Hygiene</h2>
+{#if howTo === 1}
+  <Handwash />
+{:else if howTo === 2}
+  <Handrub />
+{:else}
+  <label>
+    <input type="radio" bind:group={howTo} value={1} />
+    Handwash
+  </label>
+  <label>
+    <input type="radio" bind:group={howTo} value={2} />
+    Handrub
+  </label>
+{/if}
+
+<!-- <ProgressBar {progress} {color} {timer} />
 <p>
   {#if timer}
     {timer} {timer === 1 ? 'second' : 'seconds'}
@@ -38,4 +57,4 @@
     Ready? Press START button
   {/if}
 </p>
-<button on:click={start}>START</button>
+<button on:click={start}>START</button> -->
