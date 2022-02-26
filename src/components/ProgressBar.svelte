@@ -1,14 +1,12 @@
 <script>
+  'use strict';
   export let progress, color;
 </script>
 
-<div
-  class="container-progress"
-  style="width: {progress}%; background-color: {color}"
-/>
+<div style="width: {progress}%; background-color: {color}" />
 
 <style>
-  .container-progress {
+  div {
     height: 32px;
   }
 </style>

@@ -1,8 +1,13 @@
 <script>
+  'use strict';
   import HowTo from './HowTo.svelte';
+
+  export let reset;
+
   const title = 'Handrub',
-    duration = '20-30';
+    src = 'handrub.png',
+    minimum = 20,
+    better = 30;
 </script>
 
-<h3>{title}</h3>
-<HowTo src="handrub.png" alt={title} {duration} />
+<HowTo {title} {src} {minimum} {better} {reset} />
