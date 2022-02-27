@@ -29,6 +29,13 @@
     </section>
   {/if}
 </main>
+<footer>
+  <p>
+    <a href="http://javierandres.dev" target="_blank" rel="noopener noreferrer">
+      By Javier Andrés | Software Developer
+    </a>
+  </p>
+</footer>
 
 <style>
   section {
@@ -36,5 +43,10 @@
     margin: auto;
     display: flex;
     justify-content: space-evenly;
+  }
+  footer {
+    text-align: end;
+    font-size: 1rem;
+    padding: 1rem;
   }
 </style>
