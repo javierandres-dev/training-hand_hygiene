@@ -7,6 +7,6 @@
 
 <style>
   div {
-    height: 32px;
+    height: 8px;
   }
 </style>

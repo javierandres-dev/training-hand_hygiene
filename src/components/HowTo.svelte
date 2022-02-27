@@ -1,8 +1,7 @@
 <script>
   'use strict';
-  import BackBtn from './BackBtn.svelte';
+  import Buttons from './Buttons.svelte';
   import ProgressBar from './ProgressBar.svelte';
-  import StartBtn from './StartBtn.svelte';
   import Timer from './Timer.svelte';
 
   export let title, src, minimum, better, reset;
@@ -17,13 +16,12 @@
 
   const stop = () => {
     clearInterval(interval);
-    (timer = 0), (progress = 0), (color = null), (interval = null);
     reset();
   };
 
   const start = () => {
     interval = setInterval(() => {
-      timer >= minimum ? (color = 'green') : (color = 'yellow');
+      timer >= minimum ? (color = 'lightskyblue') : (color = 'lightblue');
       if (timer === better) stop();
       else timer = timer + 1;
       progress = timer;
@@ -36,10 +34,15 @@
 </script>
 
 <h3>{title}</h3>
-<BackBtn {timer} {reset} />
+{#if title === 'Handwash'}
+  <p>Wash hands when visibly soiled! otherwise, use handrub.</p>
+{/if}
+{#if title === 'Handrub'}
+  <p>Rub hands for hand hygiene! wash hands when visibly soiled.</p>
+{/if}
+<Timer {timer} {minimum} {better} />
+<Buttons {timer} {reset} {start} {minimum} />
 <ProgressBar {progress} {color} />
-<Timer {timer} />
-<StartBtn {start} {timer} />
 <p>Duration of the entire procedure: {minimum}-{better} seconds.</p>
 <figure>
   <img {src} alt={title} />
@@ -51,10 +54,8 @@
 </figure>
 
 <style>
-  p {
-    font-size: small;
-  }
   figcaption {
     font-size: smaller;
+    color: ligh;
   }
 </style>

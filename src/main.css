@@ -361,10 +361,16 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Lucida Grande', Geneva, Verdana, sans-serif;
 }
 
 figure {
@@ -392,20 +398,5 @@ main {
 @media screen and (min-width: 768px) {
   main {
     max-width: 720px;
-  }
-}
-@media screen and (min-width: 992px) {
-  main {
-    max-width: 960px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  main {
-    max-width: 1140px;
-  }
-}
-@media screen and (min-width: 1400px) {
-  main {
-    max-width: 1320px;
   }
 }

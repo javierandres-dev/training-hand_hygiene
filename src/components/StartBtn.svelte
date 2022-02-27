@@ -8,11 +8,17 @@
 <style>
   button {
     width: 100%;
+    border-color: skyblue;
+    color: skyblue;
   }
   button:hover {
     cursor: pointer;
+    opacity: 0.7;
   }
   button:disabled {
     cursor: not-allowed;
+    opacity: 0.5;
+    border-color: gray;
+    color: gray;
   }
 </style>

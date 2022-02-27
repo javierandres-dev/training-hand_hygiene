@@ -16,15 +16,16 @@
   {:else if howTo === 2}
     <Handrub {reset} />
   {:else}
+    <p>Wash hands when visibly soiled, rub hands for hand hygiene.</p>
     <section>
-      <label>
-        <input type="radio" bind:group={howTo} value={1} />
-        Handwash
-      </label>
-      <label>
-        <input type="radio" bind:group={howTo} value={2} />
-        Handrub
-      </label>
+      <div>
+        <input type="radio" id="handwash" bind:group={howTo} value={1} />
+        <label for="handwash"> Handwash </label>
+      </div>
+      <div>
+        <input type="radio" id="handrub" bind:group={howTo} value={2} />
+        <label for="handrub"> Handrub </label>
+      </div>
     </section>
   {/if}
 </main>
@@ -32,6 +33,7 @@
 <style>
   section {
     width: 30rem;
+    margin: auto;
     display: flex;
     justify-content: space-evenly;
   }
